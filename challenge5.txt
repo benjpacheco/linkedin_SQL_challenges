@@ -1,0 +1,2 @@
+SELECT country_id, date, gdp, AVG(gdp) OVER(PARTITION BY country_id) AS avg_gdp
+FROM "CountryStats"
