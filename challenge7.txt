@@ -1,0 +1,7 @@
+SELECT fpc."city",  pop."country_name", SUM(fpc."number_of_fans") AS total_fans
+FROM "FansPerCity" AS fpc
+JOIN "PopStats" AS pop
+ON fpc."country_code" = pop."country_code"
+GROUP BY fpc."city", pop."country_name"
+ORDER BY total_fans DESC
+LIMIT 10;
