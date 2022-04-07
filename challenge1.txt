@@ -1,0 +1,3 @@
+SELECT created_time, engaged_fans, post_clicks, reach, impressions
+FROM "PostInsights"
+ORDER BY created_time DESC;
