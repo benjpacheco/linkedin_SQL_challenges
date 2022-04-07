@@ -1,0 +1,3 @@
+SELECT DISTINCT "date", "new_likes"
+FROM "GlobalPage"
+ORDER BY "new_likes" DESC;
