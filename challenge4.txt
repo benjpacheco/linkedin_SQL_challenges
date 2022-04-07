@@ -1,0 +1,6 @@
+SELECT "gender", SUM(number_of_fans),
+ROUND(SUM(number_of_fans) * 100 / (SELECT SUM(number_of_fans) FROM "FansPerGenderAge" WHERE "date" = '2018-10-16'), 2) 
+AS total_pct
+FROM "FansPerGenderAge"
+WHERE "date" = '2018-10-16'
+GROUP BY "gender"
