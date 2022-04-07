@@ -1,0 +1,5 @@
+SELECT "CountryCode", "NumberOfFans" AS num_fans
+FROM "FansPerCountry"
+WHERE "Date" = '2018-10-16'
+ORDER BY num_fans DESC
+LIMIT 10;
