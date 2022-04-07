@@ -1,0 +1,8 @@
+SELECT fpc."NumberOfFans", pop."country_name"
+FROM "FansPerCountry" AS fpc
+JOIN "PopStats" AS pop
+ON fpc."CountryCode" = pop."country_code"
+WHERE fpc."Date" = '2018-10-16'
+AND pop."population" > 20000000
+ORDER BY fpc."NumberOfFans" ASC
+LIMIT 10;
