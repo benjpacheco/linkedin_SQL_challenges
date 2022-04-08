@@ -1,0 +1,5 @@
+SELECT * FROM "Games" WHERE 'medal' IS NULL;
+
+SELECT sport, athlete_id,
+COALESCE(medal, 'NA')
+FROM "Games";

@@ -1,0 +1,2 @@
+SELECT *, REGEXP_MATCHES(event, 'Men') AS Mens_Events
+FROM "GamesStats";
