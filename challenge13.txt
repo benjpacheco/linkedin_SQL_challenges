@@ -1,0 +1,4 @@
+SELECT region, TRIM(REPLACE(REPLACE(region, '.', ''), '&', 'AND'))  AS fixed_region
+FROM "CountryRegions"
+WHERE region = 'LATIN AMER. & CARIB    '
+GROUP BY region
