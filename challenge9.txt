@@ -1,0 +1,7 @@
+SELECT cr.region, SUM(gs."Gold") AS gold_medals, gs."athlete_id", ROW_NUMBER() OVER(PARTITION BY cr.region ORDER BY SUM(gs."Gold") DESC)
+FROM "GamesStats" AS gs
+JOIN "Athletes" AS a
+ON a.id = gs.athlete_id
+JOIN "CountryRegions" AS cr
+ON gs.country_id = cr.id
+GROUP BY gs.athlete_id, cr.region
