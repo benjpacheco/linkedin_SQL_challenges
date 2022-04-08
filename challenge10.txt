@@ -1,0 +1,11 @@
+SELECT sport,
+CASE WHEN (weight * 100 / height^2) < .25 THEN 'less than .25'
+	 WHEN (weight * 100 / height^2) > .25 AND (weight * 100 / height^2) < .30 THEN 'between .25 and .30'
+	 WHEN (weight * 100 / height^2) > .30 THEN 'greater than .30' END AS BMI,
+COUNT(DISTINCT athlete_id) AS athletes
+FROM "GamesStats" AS g
+JOIN "Athletes" AS a
+ON g.athlete_id = a.id
+GROUP BY sport, BMI
+ORDER BY sport, athletes DESC
+
