@@ -1,0 +1,2 @@
+SELECT *, AVG(close) OVER(ORDER BY date ROWS BETWEEN 5 PRECEDING AND CURRENT ROW) AS close_moving_avg
+FROM "StockPrice";

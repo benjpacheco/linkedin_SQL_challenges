@@ -1,0 +1,13 @@
+SELECT ROUND(AVG(engaged_fans*100.00/reach),2) AS engagement,
+CASE DATE_PART('dow', cast(created_time AS date))
+WHEN 0 THEN 'Sunday'
+WHEN 1 THEN 'Monday'
+WHEN 2 THEN 'Tuesday'
+WHEN 3 THEN 'Wednesday'
+WHEN 4 THEN 'Thursday'
+WHEN 5 THEN 'Friday'
+WHEN 6 THEN 'Saturday'
+END AS day_of_week
+FROM "PostInsights"
+GROUP BY day_of_week
+ORDER BY engagement DESC;
